@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class OthelloAI implements IOthelloAI {
 
-    int maxDepth = 5;
+    int maxDepth = 5; // Max depth of the search
 
 	/**
 	 * Finds and returns the move that leads to the highest expected utility after maxDepth moves.
@@ -26,7 +26,7 @@ public class OthelloAI implements IOthelloAI {
     }	
     
     /**
-     * Returns the utility of a maximised move. The move is found by recursively investigating all possible moves in the current state. 
+     * Returns the utility of a maximised move. The move is found by recursively examining all possible moves in the current state. 
      * Uses alpha-beta pruning to ignore paths that an opposing algorithm would prevent from being reached.
      * The recursion is mutual with minValue.
      */
@@ -42,7 +42,7 @@ public class OthelloAI implements IOthelloAI {
     }
 
     /**
-     * Returns the utility of a minimised move.
+     * Recursively finds and returns the utility of a minimised move.
      * The recursion is mutual with maxValue.
      */
     private int minValue(GameState s, int alpha, int beta, int depth) {
