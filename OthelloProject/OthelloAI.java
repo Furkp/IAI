@@ -66,7 +66,7 @@ public class OthelloAI implements IOthelloAI {
 
     /**
      * Counts tokens as points an returns a score for the GameState.
-     * Tokens from player 1 (black) increase the score while tokens from player 2 (white) decrease it.
+     * Tokens from player 1 (black) decrease the score while tokens from player 2 (white) increase it.
      * These multipliers are added to represent the strategic values of the different positions:
      * Corners:             x4
      * Edges:               x3
@@ -88,10 +88,10 @@ public class OthelloAI implements IOthelloAI {
                 else
                     multiplier = 2;
 
-                if ( board[i][j] == 1 )
-    				score += multiplier;
-    			else if ( board[i][j] == 2 )
+                if (board[i][j] == 1)
     				score -= multiplier;
+    			else if (board[i][j] == 2)
+    				score += multiplier;
             }
         }
         return score;
